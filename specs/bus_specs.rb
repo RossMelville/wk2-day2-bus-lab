@@ -58,4 +58,14 @@ def test_drop_off_passenger
   assert_equal(3, passenger_count)
 end
 
+def test_empty_bus
+  @bus2.pick_up(@person1)
+  @bus2.pick_up(@person2)
+  @bus2.pick_up(@person4)
+  @bus2.pick_up(@person3)
+  @bus2.empty_bus
+  passenger_count = @bus2.number_of_passengers
+  assert_equal(0, passenger_count)
+end
+
 end
