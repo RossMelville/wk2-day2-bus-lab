@@ -29,10 +29,20 @@ def test_bus_drive_feature
   assert_equal("Brum Brum", @bus1.drive)
 end
 
-def test_number_of_passengers
+def test_add_passengers_to_bus
+  @bus1.pick_up(@person1)
+  assert_equal(1, @bus1.number_of_passengers)
+end
+
+def test_number_of_passengers__when_none
   passenger_count = @bus1.number_of_passengers
   assert_equal(0, passenger_count)
 end
+
+# def test_number_of_passengers__with_passengers
+#   passenger_count = @bus2.number_of_passengers
+#   assert_equal(4, passenger_count)
+# end
 
 
 end
